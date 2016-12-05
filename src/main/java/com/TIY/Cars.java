@@ -26,14 +26,26 @@ public class Cars {
     @Column
     int carSpeed;
 
-    public Cars(String carMake, String carModel, String carColor, int carSpeed) {
+    @Column(nullable = false,unique = true)
+    String carName;
+
+    public Cars(String carMake, String carModel, String carColor, int carSpeed, String carName) {
         this.carMake = carMake;
         this.carModel = carModel;
         this.carColor = carColor;
         this.carSpeed = carSpeed;
+        this.carName = carName;
     }
 
     public Cars() {
+    }
+
+    public String getCarName() {
+        return carName;
+    }
+
+    public void setCarName(String carName) {
+        this.carName = carName;
     }
 
     public String getCarMake() {
