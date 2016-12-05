@@ -17,6 +17,9 @@ public class RacingGameApplicationTests {
     UserRepository users;
     @Autowired
     CarRepository cars;
+    @Autowired
+    DriverRepository drivers;
+
 
 	@Test
 	public void contextLoads() {
@@ -81,6 +84,21 @@ public class RacingGameApplicationTests {
         } finally {
             cars.deleteAll();
             assertEquals(0, cars.count());
+        }
+    }
+
+    @Test
+    public void testConstructAndInsertDrivers() {
+        try {
+            Drivers testDriver = new Drivers("TestFirstName", "TestLastName", "TestSpecies");
+            drivers.save(testDriver);
+            assertTrue(drivers.count() == 1);
+            assertEquals("TestFirstName", drivers.findByDriverFirstName("TestFirstName").driverFirstName);
+            assertEquals("TestLastName", drivers.findByDriverFirstName("TestFirstName").driverLastName);
+            assertEquals("TestSpecies", drivers.findByDriverFirstName("TestFirstName").driverSpecies);
+        } finally {
+            drivers.deleteAll();
+            assertEquals(0, drivers.count());
         }
     }
 }
