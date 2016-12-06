@@ -22,13 +22,15 @@ public class RacingGameApplication {
 			Drivers driverMario = new Drivers("Mario", null, "Human");
 			Drivers driverYoshi = new Drivers("Yoshi",null,"Dinosaur");
 			Drivers driverDonkeyKong = new Drivers("Donkey", "Kong", "Primate");
-			Drivers driverMissDaisy = new Drivers("Hoke","Colbum","Human");
+			Drivers driverMissDaisy = new Drivers("Hoke", "Colbum", "Human");
 			Drivers driverPope = new Drivers("Pope Francis", null,"Human");
 			Drivers driverBender = new Drivers("Bender", "Rodriguez","Robot");
 			Drivers driverFry = new Drivers("Philip", "Fry", "Human");
 			Drivers driverLeela = new Drivers("Turanga","Leela", "Mutant");
-			Drivers driverToonces = new Drivers("Toonces", "The Driving Cat", "Feline");
+			Drivers driverToonces = new Drivers("Toonces","The Driving Cat","Feline");
 			Drivers driverJLSimpson = new Drivers("Jimmy Lee", "Simpson", "Human");
+			Drivers driverTina = new Drivers("Tina", "Belcher", "Human");
+			drivers.save(driverTina);
 			drivers.save(driverKato);
 			drivers.save(driverMario);
 			drivers.save(driverYoshi);
